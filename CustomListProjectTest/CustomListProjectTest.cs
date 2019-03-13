@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CustomListProjectTest;
-using System.Collections.Generic;
+using CustomListProject;
 
 namespace CustomListProjectTest
 {
@@ -12,13 +11,13 @@ namespace CustomListProjectTest
         public void Add_AddToEmptyList_AddsItemToIndexZero()
         {
             // Arrange
-            List<int> test = new List<int>();
-            int thingToAdd = 10;
+            CustomList<int> test = new CustomList<int>();
+            int itemToAdd = 10;
             int expected = 10;
             int actual;
 
             // Act
-            test.Add(thingToAdd);
+            test.Add(itemToAdd);
             actual = test[0];
 
             // Assert
@@ -28,9 +27,9 @@ namespace CustomListProjectTest
         [TestMethod]
         public void Add_EmptyList_CountIncrements()
         {
-           // Arrange
-           List<int> test = new List<int>();
-           int thingToAdd = 10;
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+           int itemToAdd = 10;
            int expected = 1;
            int actual;
 
@@ -45,16 +44,16 @@ namespace CustomListProjectTest
         public void Add_ListCountThree_AddsToIndexThree()
         {
             // Arrange
-            List<int> test = new List<int>();
-            int thingToAdd = 10;
-            test.Add(thingToAdd);
-            test.Add(thingToAdd);
-            test.Add(thingToAdd);
+            CustomList<int> test = new CustomList<int>();
+            int itemToAdd = 10;
+            test.Add(itemToAdd);
+            test.Add(itemToAdd);
+            test.Add(itemToAdd);
             int expected = 10;
             int actual;
 
             // Act
-            test.Add(thingToAdd);
+            test.Add(itemToAdd);
             actual = test[3];
 
             // Assert
@@ -65,9 +64,9 @@ namespace CustomListProjectTest
         public void Add_ListCountOne_AddsToIndexThree()
         {
             // Arrange
-            List<int> test = new List<int>();
-            int thingToAdd = 10;
-            test.Add(thingToAdd);
+            CustomList<int> test = new CustomList<int>();
+            int itemToAdd = 10;
+            test.Add(itemToAdd);
             int expected = 40;
             int actual;
 
@@ -85,17 +84,17 @@ namespace CustomListProjectTest
         public void Add_ListCountFour_AddsToIndexFour() // Array is full... need to make a new one
         {
             // Arrange
-            List<int> test = new List<int>();
-            int thingToAdd = 10;
-            test.Add(thingToAdd);
-            test.Add(thingToAdd);
-            test.Add(thingToAdd);
-            test.Add(thingToAdd);
+            CustomList<int> test = new CustomList<int>();
+            int itemToAdd = 10;
+            test.Add(itemToAdd);
+            test.Add(itemToAdd);
+            test.Add(itemToAdd);
+            test.Add(itemToAdd);
             int expected = 10;
             int actual;
 
             // Act
-            test.Add(thingToAdd);
+            test.Add(itemToAdd);
             actual = test[4];
 
             // Assert

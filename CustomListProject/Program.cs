@@ -18,8 +18,9 @@ namespace CustomListProject
             items.Add(3);
             items.Add(4);
             items.Add(5);
+            items.Add(6);
 
-            Console.WriteLine(items[4]);
+            Console.WriteLine(items[5]);
             Console.ReadLine();
         }
     }

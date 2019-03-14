@@ -12,16 +12,27 @@ namespace CustomListProject
         private T[] items;
         public T this[int i]
         {
-            get { return items[i]; }
+            get
+            {
+                if (i >= count)
+                {
+                    throw new System.ArgumentException("Index out-of-bounds");
+                }
+                else
+                {
+                    return items[i];
+                }
+                
+            }
             set
             {
                 if (i >= count)
                 {
-                    items[i] = value;
+                    throw new System.ArgumentException("Index out-of-bounds");
                 }
                 else
                 {
-                    throw new System.ArgumentException("Index out-of-bounds.");
+                    items[i] = value;
                 }
             }
         }

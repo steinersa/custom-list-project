@@ -33,8 +33,9 @@ namespace CustomListProjectTest
            int expected = 1;
            int actual;
 
-           // Act
-           actual = test.Count;
+            // Act
+            test.Add(itemToAdd);
+            actual = test.Count;
 
            // Assert
            Assert.AreEqual(expected, actual);

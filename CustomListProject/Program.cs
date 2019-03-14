@@ -15,13 +15,12 @@ namespace CustomListProject
 
             items.Add(1);
             items.Add(2);
+            items.Add(3);
+            items.Add(4);
+            items.Add(5);
 
-            for (int i = 0; i < items[4]; i++)
-            {
-                Console.WriteLine(i);
-                Console.ReadLine();
-            }
-
+            Console.WriteLine(items[2]);
+            Console.ReadLine();
         }
     }
 }

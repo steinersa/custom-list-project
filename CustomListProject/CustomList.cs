@@ -15,7 +15,7 @@ namespace CustomListProject
             get { return items[i]; }
             set
             {
-                if (i > count)
+                if (i >= count)
                 {
                     items[i] = value;
                 }
@@ -35,6 +35,7 @@ namespace CustomListProject
         }
         public int capacity;
 
+
         // constructor
         public CustomList()
         {
@@ -43,24 +44,24 @@ namespace CustomListProject
             capacity = 4;
         }
 
+
         // member methods
+        public void ExpandArray()
+        {
+            T[] newItems = new T[capacity += 4];
+            for(int i = 0; i < count; i++)
+            {
+                newItems[i] = items[i];
+            }
+            items = newItems;
+        }
+
         public void Add(T itemToAdd)
         {
             if(count >= capacity)
             {
-                T[] moreItems = new T[capacity += 4];
-                foreach (T thing in items)
-                {
-                    //put into moreItems at index where it currently is
-                    //items[i] = moreItems[i];
-                    
-                }
-
-
-
-                //items[capacity += 4];
-                //foreach
-                // public T[] items = new T[i += 4];
+                ExpandArray();
+                Add(itemToAdd);
             }
             else
             {

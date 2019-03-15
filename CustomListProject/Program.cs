@@ -13,7 +13,7 @@ namespace CustomListProject
 
             CustomList<int> items = new CustomList<int>();
 
-            items.Add(1);
+            items.Add(4);
             items.Add(2);
             items.Add(3);
             items.Add(4);

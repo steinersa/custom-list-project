@@ -82,8 +82,9 @@ namespace CustomListProject
 
         public void Remove(T itemToRemove)
         {
+            int countNew = 0;
             T[] newItems = new T[capacity];
-            for (int i = 0; i < count; i++)
+            for (int i = 0, j = 0; i < count; i++)
             {
                 if (items[i].Equals(itemToRemove))
                 {
@@ -91,9 +92,12 @@ namespace CustomListProject
                 }
                 else
                 {
-                    newItems[i] = items[i];
+                    newItems[j] = items[i];
+                    j++;
+                    countNew++;
                 }
             }
+            count = countNew;
             items = newItems;
         }
     }

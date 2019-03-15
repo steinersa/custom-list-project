@@ -46,7 +46,6 @@ namespace CustomListProject
         }
         public int capacity;
 
-
         // constructor
         public CustomList()
         {
@@ -80,6 +79,22 @@ namespace CustomListProject
             count++;
             }
         }
-        
+
+        public void Remove(T itemToRemove)
+        {
+            T[] newItems = new T[capacity];
+            for (int i = 0; i < count; i++)
+            {
+                if (items[i].Equals(itemToRemove))
+                {
+                    continue;
+                }
+                else
+                {
+                    newItems[i] = items[i];
+                }
+            }
+            items = newItems;
+        }
     }
 }

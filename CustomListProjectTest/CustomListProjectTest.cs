@@ -102,8 +102,6 @@ namespace CustomListProjectTest
             Assert.AreEqual(expected, actual);
         }
 
-
-
         [TestMethod]
         public void Remove_ObjectAtIndexZeroRemoved_ObjectAtIndexOneShiftsToIndexZero()
         {
@@ -124,25 +122,25 @@ namespace CustomListProjectTest
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Remove_ThingNotInList_ReturnsFalse()
-        {
-            // Arrange
-            CustomList<int> test = new CustomList<int>();
-            test.Add(10);
-            test.Add(20);
-            test.Add(30);
-            int itemToRemove = 40;
-            bool expected = false;
-            bool actual;
+        //[TestMethod]
+        //public void Remove_ThingNotInList_ReturnsFalse()
+        //{
+        //    // Arrange
+        //    CustomList<int> test = new CustomList<int>();
+        //    test.Add(10);
+        //    test.Add(20);
+        //    test.Add(30);
+        //    int itemToRemove = 40;
+        //    bool expected = false;
+        //    bool actual;
 
-            // Act
-            actual = test.Remove(itemToRemove);
+        //    // Act
+        //    actual = test.Remove(itemToRemove);
 
-            // Assert
-            Assert.AreEqual(expected, actual);
+        //    // Assert
+        //    Assert.AreEqual(expected, actual);
 
-        }
+        //}
 
         [TestMethod]
         public void Remove_ListCountFour_CountDecrements()

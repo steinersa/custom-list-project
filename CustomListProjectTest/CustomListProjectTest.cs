@@ -82,7 +82,7 @@ namespace CustomListProjectTest
         }
 
         [TestMethod]
-        public void Add_ListCountFour_AddsToIndexFour() // Array is full... need to make a new one
+        public void Add_ListCountFour_AddsToIndexFour()
         {
             // Arrange
             CustomList<int> test = new CustomList<int>();
@@ -100,6 +100,69 @@ namespace CustomListProjectTest
 
             // Assert
             Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [TestMethod]
+        public void Remove_ObjectAtIndexZeroRemoved_ObjectAtIndexOneShiftsToIndexZero()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(10);
+            test.Add(20);
+            test.Add(30);
+            test.Add(40);
+            int expected = 20;
+            int actual;
+
+            // Act
+            test.Remove(10);
+            actual = test[0];
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Remove_ThingNotInList_ReturnsFalse()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(10);
+            test.Add(20);
+            test.Add(30);
+            int itemToRemove = 40;
+            bool expected = false;
+            bool actual;
+
+            // Act
+            actual = test.Remove(itemToRemove);
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void Remove_ListCountFour_CountDecrements()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(10);
+            test.Add(20);
+            test.Add(30);
+            test.Add(40);
+            int expected = 3;
+            int actual;
+
+            // Act
+            test.Remove(40);
+            actual = test.Count;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+
         }
 
     }

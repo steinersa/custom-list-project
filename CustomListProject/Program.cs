@@ -11,17 +11,27 @@ namespace CustomListProject
         static void Main(string[] args)
         {
 
-            CustomList<int> items = new CustomList<int>();
+            //CustomList<int> items = new CustomList<int>();
 
-            items.Add(1);
-            items.Add(2);
-            items.Add(3);
-            items.Add(4);
-            items.Add(5);
-            items.Add(6);
+            //items.Add(1);
+            //items.Add(2);
+            //items.Add(3);
+            //items.Add(4);
+            //items.Add(5);
+            //items.Add(6);
 
-            Console.WriteLine(items[5]);
-            Console.ReadLine();
+            //Console.WriteLine(items[8]);
+            //Console.ReadLine();
+
+
+            List<int> test = new List<int>();
+
+            test.Add(10);
+            test.Add(20);
+            test.Add(30);
+
+            test.Remove(80);
+
         }
     }
 }

@@ -20,9 +20,10 @@ namespace CustomListProject
             items.Add(5);
             items.Add(6);
             items.Remove(4);
+            items.ToString();
 
-            Console.WriteLine(items[4]);
-            Console.ReadLine();
+            //Console.WriteLine(items[1]);
+            //Console.ReadLine();
 
         }
 

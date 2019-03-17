@@ -122,25 +122,26 @@ namespace CustomListProjectTest
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void Remove_ThingNotInList_ReturnsFalse()
-        //{
-        //    // Arrange
-        //    CustomList<int> test = new CustomList<int>();
-        //    test.Add(10);
-        //    test.Add(20);
-        //    test.Add(30);
-        //    int itemToRemove = 40;
-        //    bool expected = false;
-        //    bool actual;
+        [TestMethod]
+        public void Remove_ThingNotInList_ReturnsFalse()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(10);
+            test.Add(20);
+            test.Add(30);
+            int itemToRemove = 40;
+            bool expected = false;
+            bool actual;
 
-        //    // Act
-        //    actual = test.Remove(itemToRemove);
+            // Act
+            test.Remove(itemToRemove);
+            actual = test.isRemoved;
 
-        //    // Assert
-        //    Assert.AreEqual(expected, actual);
+            // Assert
+            Assert.AreEqual(expected, actual);
 
-        //}
+        }
 
         [TestMethod]
         public void Remove_ListCountFour_CountDecrements()
@@ -160,7 +161,26 @@ namespace CustomListProjectTest
 
             // Assert
             Assert.AreEqual(expected, actual);
+        }
 
+        [TestMethod]
+        public void ToString_ListOfIntegers_ConvertsToString()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(1);
+            test.Add(2);
+            test.Add(3);
+            test.Add(4);
+            test.Add(5);
+            string expected = "12345";
+            string actual;
+
+            // Act
+            actual = test.ToString();
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
 
     }

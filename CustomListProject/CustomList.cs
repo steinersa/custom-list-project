@@ -45,6 +45,7 @@ namespace CustomListProject
             }
         }
         public int capacity;
+        public bool isRemoved;
 
         // constructor
         public CustomList()
@@ -82,6 +83,7 @@ namespace CustomListProject
 
         public void Remove(T itemToRemove)
         {
+            isRemoved = false;
             int countNew = 0;
             T[] newItems = new T[capacity];
             for (int i = 0, j = 0; i < count; i++)
@@ -96,9 +98,26 @@ namespace CustomListProject
                     j++;
                     countNew++;
                 }
+                if (i != j)
+                {
+                    isRemoved = true;
+                }
             }
             count = countNew;
             items = newItems;
         }
+
+        public override string ToString()
+        {
+            string inString = "";
+                for (int i = 0; i < count; i++)
+                {
+                    inString += items[i];
+                }
+                return inString;
+        }
+
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable<T>
     {
         // member variables
         private T[] items;
@@ -110,14 +111,25 @@ namespace CustomListProject
         public override string ToString()
         {
             string inString = "";
-                for (int i = 0; i < count; i++)
-                {
-                    inString += items[i];
-                }
-                return inString;
+            for (int i = 0; i < count; i++)
+            {
+                inString += items[i];
+            }
+            return inString;
         }
 
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return items[i];
+            }
+        }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

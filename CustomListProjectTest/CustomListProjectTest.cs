@@ -140,7 +140,26 @@ namespace CustomListProjectTest
 
             // Assert
             Assert.AreEqual(expected, actual);
+        }
 
+        [TestMethod]
+        public void Remove_ThingInList_ReturnsTrue()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(10);
+            test.Add(20);
+            test.Add(30);
+            int itemToRemove = 20;
+            bool expected = true;
+            bool actual;
+
+            // Act
+            test.Remove(itemToRemove);
+            actual = test.isRemoved;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]

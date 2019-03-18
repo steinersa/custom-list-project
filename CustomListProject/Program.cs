@@ -11,16 +11,16 @@ namespace CustomListProject
         static void Main(string[] args)
         {
 
-            CustomList<int> items = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> items = new CustomList<int>();
 
-            //items.Add(4);
-            //items.Add(2);
-            //items.Add(3);
-            //items.Add(4);
-            //items.Add(5);
-            //items.Add(6);
-            //items.Remove(4);
-            items.ToString();
+            items.Add(4);
+            items.Add(2);
+            items.Add(3);
+            items.Add(4);
+            items.Add(5);
+            items.Add(6);
+            items.Remove(7);
+
 
 
             //foreach (int thing in items)

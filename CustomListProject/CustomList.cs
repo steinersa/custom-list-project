@@ -84,7 +84,6 @@ namespace CustomListProject
 
         public void Remove(T itemToRemove)
         {
-            isRemoved = false;
             int countNew = 0;
             T[] newItems = new T[capacity];
             for (int i = 0, j = 0; i < count; i++)
@@ -99,13 +98,24 @@ namespace CustomListProject
                     j++;
                     countNew++;
                 }
-                if (i != j)
-                {
-                    isRemoved = true;
-                }
             }
+            CheckIfRemoved(countNew);
             count = countNew;
             items = newItems;
+        }
+
+        public bool CheckIfRemoved(int countNew)
+        {
+            if (countNew != count)
+            {
+                isRemoved = true;
+                return isRemoved;
+            }
+            else
+            {
+                isRemoved = false;
+                return isRemoved;
+            }
         }
 
         public override string ToString()

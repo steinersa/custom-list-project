@@ -202,5 +202,40 @@ namespace CustomListProjectTest
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+        public void OverloadThePlusOperator_TwoCustomListsOfSameType_AddsToListsTogether()
+        {
+            // Arrange
+            CustomList<int> test = new CustomList<int>();
+            test.Add(1);
+            test.Add(2);
+            test.Add(3);
+            CustomList<int> testTwo = new CustomList<int>();
+            testTwo.Add(1);
+            testTwo.Add(2);
+            testTwo.Add(3);
+
+
+            // Act
+
+
+            //Assert
+
+
+        }
+
+        [TestMethod]
+        public void OverloadThePlusOperator_TwoCustomListsOfDifferentTypes_()
+        {
+            // Arrange
+
+
+            // Act
+
+
+            //Assert
+
+
+        }
     }
 }

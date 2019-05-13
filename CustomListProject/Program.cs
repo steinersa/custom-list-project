@@ -10,7 +10,7 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-            CustomList<int> combined = new CustomList<int>();
+            //CustomList<int> combined = new CustomList<int>();
             //CustomList<int> items = new CustomList<int>();
 
             //items.Add(4);
@@ -23,6 +23,8 @@ namespace CustomListProject
 
             //List<string> one = new List<string> { "test", "hello", "sarah" };
             //List<string> two = new List<string> { "1", "2", "3" };
+
+            //one.Union(two);
 
             CustomList<int> testOne = new CustomList<int>();
             testOne.Add(1);

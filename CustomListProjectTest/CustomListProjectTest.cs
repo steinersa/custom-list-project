@@ -206,7 +206,6 @@ namespace CustomListProjectTest
         public void OverloadThePlusOperator_TwoCustomListsOfSameType_AddsToListsTogether()
         {
             // Arrange
-            CustomList<int> combined = new CustomList<int>();
             CustomList<int> testOne = new CustomList<int>();
             testOne.Add(1);
             testOne.Add(2);
@@ -216,30 +215,13 @@ namespace CustomListProjectTest
             testTwo.Add(5);
             testTwo.Add(6);
             int expected = 5;
-            int actual;
+            int actual = 5;
 
             // Act
-            testOne.OverloadPlus(testOne, testTwo);
-            actual = combined[4];
+            actual = testOne.OverloadPlus(testOne, testTwo)[4];
 
             //Assert
             Assert.AreEqual(expected, actual);
-
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(Exception))]
-        public void OverloadThePlusOperator_TwoCustomListsOfDifferentTypes_ExceptionThrown()
-        {
-            // Arrange
-            CustomList<int> testOne = new CustomList<int>();
-            CustomList<string> testTwo = new CustomList<string> { "hello", "test", "sarah" };
-
-            // Act
-            OverloadPlus(CustomList<int> testOne, CustomList<string> testTwo);
-
-            //Assert
-
 
         }
     }

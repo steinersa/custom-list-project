@@ -141,21 +141,19 @@ namespace CustomListProject
             throw new NotImplementedException();
         }
 
-        public void OverloadPlus(CustomList<T> testOne, CustomList<T> testTwo)
+        public CustomList<int> OverloadPlus(CustomList<int> testOne, CustomList<int> testTwo)
         {
-            CustomList<T> combined = new CustomList<T>();
-
+            CustomList<int> items = new CustomList<int>();
             int j = 0;
-            for(int i = 0; i < testOne.count; i++)
+            for (int i = 0; i < testOne.count; i++)
             {
-                combined[i] = testOne[i];
-                j++;
+                items.Add(testOne[i]);
             }
-            for(int k = j, l = 0; l < testTwo.count; l++, j++)
+            for (int k = j, l = 0; l < testTwo.count; l++, j++)
             {
-                combined[k] = testTwo[l];
+                items.Add(testTwo[l]);
             }
+            return items;
         }
-
     }
 }

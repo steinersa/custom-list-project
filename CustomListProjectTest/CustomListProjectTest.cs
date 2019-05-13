@@ -206,32 +206,37 @@ namespace CustomListProjectTest
         public void OverloadThePlusOperator_TwoCustomListsOfSameType_AddsToListsTogether()
         {
             // Arrange
-            CustomList<int> test = new CustomList<int>();
-            test.Add(1);
-            test.Add(2);
-            test.Add(3);
+            CustomList<int> combined = new CustomList<int>();
+            CustomList<int> testOne = new CustomList<int>();
+            testOne.Add(1);
+            testOne.Add(2);
+            testOne.Add(3);
             CustomList<int> testTwo = new CustomList<int>();
-            testTwo.Add(1);
-            testTwo.Add(2);
-            testTwo.Add(3);
-
+            testTwo.Add(4);
+            testTwo.Add(5);
+            testTwo.Add(6);
+            int expected = 5;
+            int actual;
 
             // Act
-
+            testOne.OverloadPlus(testOne, testTwo);
+            actual = combined[4];
 
             //Assert
-
+            Assert.AreEqual(expected, actual);
 
         }
 
         [TestMethod]
-        public void OverloadThePlusOperator_TwoCustomListsOfDifferentTypes_()
+        [ExpectedException(typeof(Exception))]
+        public void OverloadThePlusOperator_TwoCustomListsOfDifferentTypes_ExceptionThrown()
         {
             // Arrange
-
+            CustomList<int> testOne = new CustomList<int>();
+            CustomList<string> testTwo = new CustomList<string> { "hello", "test", "sarah" };
 
             // Act
-
+            OverloadPlus(CustomList<int> testOne, CustomList<string> testTwo);
 
             //Assert
 
